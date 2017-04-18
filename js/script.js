@@ -11,16 +11,16 @@ $(document).ready(function() {
 // }); //end click album pic/cover event function
 // var album_art=[];
 
-var spotifyAPI = "https://api.spotify.com/v1/albums"; //API
+var spotifyAPI = "https://api.spotify.com/v1/albums/?ids=41MnTivkwTO3UUJ8DrqEJJ,5XzokqsAmkv0cjk1kAUwiM,4Dk1fhh3nqIt5dOq6sGc1f,2Wa1LMgomQa5OJuaOSnv1B,3nsnirLpQt68OIy6Lih2u5,3IpvmE4e3TMq7TmqAl8OGF,0Jk5J9HrDmCEKV7xYmaB6m"; //API
 
 var spotifyOptions = {
-images: [],
-genres: "Post-Grunge"  //// ids
+// images: [],
+// genres: "41MnTivkwTO3UUJ8DrqEJJ" //// ids
 };
 
 var displayAlbums =function (data) {
 
-	var albumHMTL = "<ul>";  // start building the ul list for the album_art images
+	var albumHTML = "<ul>";  // start building the ul list for the album_art images
 
 	$.each(data.albums, function ( i, albums) {
 	//this $.each accesses the spotify object /array and loops through each one…
@@ -36,8 +36,9 @@ var displayAlbums =function (data) {
 
     $("#album-gallery").html(albumHTML);
 
-		$.getJSON(spotifyAPI, spotifyOptions, displayAlbums); // AJAX request with JQUERY
+
   }; /// END displayAlbums functions
 
+$.getJSON(spotifyAPI, spotifyOptions, displayAlbums); // AJAX request with JQUERY
 
 }); ///END DOCUMENT READY FUNCTION
