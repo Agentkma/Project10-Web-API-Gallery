@@ -1,0 +1,10 @@
+
+* {
+text-align: center;
+}
+
+.selected {
+  content: "Standby";
+  background: lightblue;
+
+}
