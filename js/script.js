@@ -47,15 +47,20 @@ $(document).ready(function() {
 			///Remove / add classes not working
 			$(this).removeClass('selected');  //  removethe class “selected” of any button
 			$(this).addClass('selected'); // add “selected” class to button actually clicked
-			//jQuery
-			searchValues = $("#search-area").val();
-			//javascript SPLIT s
-			searchValues = searchValues.split("");
-			//Jquery remove white spaces at begnning & end of strings
-			searchValues = $(this).trim();
+			//jQuery to get search area text and then remove white spaces at begin/end of string
+			searchValues = $("#search-area").val().trim();
+			//javascript to replace the white spaces between words with + for Spotify search API
+			searchValues = searchValues.replace(/" " /g,"+");
 			console.log(searchValues);
-			//join ("+")TO PUT THE STRINGS BACK TOGETHER WITH A + BETWEEN WORDS
-			eachSearchValue = searchValues.join("+");
+			// change searchValues to spotifyOptions parameter..with "q=" at beggingin
+			eachSearchValue += searchValues;
+
+			//PREVIOUS METHOD TO TRY TO GET SEARCH TEXT READY FOR SPOTIFY OPTIONS 
+			// //Jquery remove white spaces at begnning & end of strings
+			// searchValues = $(this).trim();
+			// console.log(searchValues);
+			// //join ("+")TO PUT THE STRINGS BACK TOGETHER WITH A + BETWEEN WORDS
+			// eachSearchValue = searchValues.join("+");
 
 			$.getJSON(spotifyAPI,spotifyOptions,displayAlbums).fail(function (jqXHR) {
 					console.log(jqXHR.status);
