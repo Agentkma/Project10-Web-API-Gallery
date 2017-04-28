@@ -29,16 +29,14 @@ $(document).ready(function() {
 					//jQuery to get search area text and then remove white spaces at begin/end of string
 					searchValues = $("#search-area").val().trim();
 
-					//javascript to replace the white spaces between words with + for Spotify search API
-					eachSearchValue  = searchValues.replace(/ /g,"+");
-
+					eachSearchValue=searchValues;
 					//
 					console.log(eachSearchValue);
 
 					var spotifyAPI = "https://api.spotify.com/v1/search"; //API
 					var spotifyOptions = {
 					q : eachSearchValue,
-					type :  "artists"
+					type :  "artist"
 					};
 					var displayAlbums =function (data) {
 
@@ -53,9 +51,11 @@ $(document).ready(function() {
 								 albumHTML += '<img src= "' + eachItem.artists.images[1].url + ' " >  </a> </li>'; //.images.url is the prop in the spotify json object with the pic/jpg
 
 								 albumHTML += "</ul>";
+								 console.log(albumHTML);
 							});//END anonymous function
 
 							$("#album-gallery").html(albumHTML);
+
 						}; /// END displayAlbums functions
 
 		      $('#search-area').val("");
