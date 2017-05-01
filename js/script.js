@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 					eachSearchValue=searchValues;
 					//
-					console.log(eachSearchValue);
+					// console.log(eachSearchValue);
 
 					var spotifyAPI 			= "https://api.spotify.com/v1/search"; //API
 					var spotifyOptions 	= {
@@ -39,20 +39,24 @@ $(document).ready(function() {
 							type :  "artist"
 							};
 					function displayAlbums (data) {
-
+						console.log(data);
+						// console.log(data.items);
 							var albumHTML = '<ul>';  // start build ul list for the album_art images
 
-							$.each(data.items, function ( i, eachArtist) {
+							$.each(data, function ( i, eachArtist) {
+								console.log(eachArtist);
+								console.log(eachArtist.items);
 							// $.each accesses the spotify object /array and loops through each one…
 							/// $.each (object/array, callBackFunction(); ///
-							///the callBackFunction takes 2 arguments function ( i , value)  where i is the index value of the current array item, and value is the value of the current array item
+							///the callBackFunction takes 2 arguments function ( i , value)  where i is the index value of the current array item, and eachArtis is the value of the current array item
 									 albumHTML += '<li class = “grid-25 tablet-grid-50”>';  //add CSS class
-									 albumHTML += '<a href= " ' + eachArtist.href + ' " class = "image" >'; // .href is the prop needed to access the link
-									 albumHTML += '<img src= "' + eachArtist.images[1].url + ' " >  </a> </li>'; //.images.url is the prop in the spotify json object with the pic/jpg
+									 albumHTML += '<a href= " ' + eachArtist.items.href + ' " class = "image" >'; // .href is the prop needed to access the link
+									 console.log(albumHTML);
+									 albumHTML += '<img src= "' + eachArtist.items.images[1].url + ' " >  </a> </li>'; //.images.url is the prop in the spotify json object with the pic/jpg
 							});//END $.each
 
 								 albumHTML += '</ul>';
-								 		console.log(albumHTML);
+										// 	console.log(albumHTML);
 								$("#album-gallery").html(albumHTML);
 						} /// END displayAlbums functions
 
