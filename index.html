@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet" type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lightbox2-master/dist/css/lightbox.css">
 
 
   </head>
@@ -15,16 +16,17 @@
     <div id="page-wrapper">
       <header role="banner">
         <h1>SEARCH SPOTIFY GALLERY </h1>
-        <p> Type your search below to find your favorite artists...</p>
+        <p> Find albums by your favorite artists...</p>
       </header>
 
       <main role="main" id= "main-content">
 
-        <div>
+        <div id="search-box">
           <form>
+            <label for="search-area"> Type your search below</label><br>
             <textarea id="search-area" name="search-area" cols="60" rows="5" type="submit" >
             </textarea> <br>
-            <button type="submit"  id="submit-button" class="selected"> SEARCH</button>
+            <input type="submit"  id="submit-button" class="selected" value="search">
         </form>
 
 
@@ -43,6 +45,7 @@
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
+    <script src="lightbox2-master/dist/js/lightbox.min.js"> </script>
 
     <script src="js/script.js"> </script>
   </body>
