@@ -15,17 +15,16 @@
   <body>
     <div id="page-wrapper">
       <header role="banner">
-        <h1>SEARCH SPOTIFY GALLERY </h1>
-        <p> Find albums by your favorite artists...</p>
+        <h1>SPOTIFY GALLERY </h1>
+        <!-- <p> </p> -->
       </header>
 
       <main role="main" id= "main-content">
 
         <div id="search-box">
           <form>
-            <label for="search-area"> Type your search below</label><br>
-            <textarea id="search-area" name="search-area" cols="60" rows="5" type="submit" >
-            </textarea> <br>
+            <label for="search-area"> Search albums by artist</label><br>
+            <input placeholder="Type your search here" id="search-area" name="search-area"  type="text" tabindex="1" ><span id="search-icon"></span><br>
             <input type="submit"  id="submit-button" class="selected" value="search">
         </form>
 
@@ -37,7 +36,9 @@
 
       </main>
 
-
+      <footer>
+        <p> All rights reserved </p>
+      </footer>
 
     <!--  END  id "page-wrapper" below -->
     </div>
@@ -46,10 +47,14 @@
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
     <script src="lightbox2-master/dist/js/lightbox.min.js"> </script>
+    <script>
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices' : true,
+      'wrapAround': true
+    })
+    </script>
 
     <script src="js/script.js"> </script>
   </body>
-  <footer>
-    <p> All rights reserved </p>
-  </footer>
+
 </html>

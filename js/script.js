@@ -16,10 +16,7 @@ $(document).ready(function() {
 
 
 
-		$('textarea').focus( function () {
-        ///below not working in safari
-        $(this).css("outline-color", "#FF0000");
-    });//end focus function
+
 
 
 		$('form').submit(function (evt) {  // adds event handler/ click to submit button
@@ -52,23 +49,21 @@ $(document).ready(function() {
 							};
 					function displayAlbums (data) {
 						console.log(data);
-						// console.log(data.items);
+						console.log(data.items);
 							var albumHTML = '<ul id="search-list">';  // start build ul list for the album_art images
 
 							$.each(data.albums.items, function ( i, eachAlbum) {
-								// console.log(data.albums.items);
+								console.log(data.albums.items);
 
 							// $.each accesses the spotify object /array and loops through each one…
 							// /// $.each (object/array, callBackFunction(); ///
 							// ///the callBackFunction takes 2 arguments function ( i , value)  where i is the index value of the current array item, and eachArtis is the value of the current array item
-									 albumHTML += '<li class = “grid-1 grid-3”>';  //add CSS class
-									 albumHTML += '<a href= " ' + eachAlbum.href + ' " class = "image" data-lightbox="image" data-title = "' +  eachAlbum.name + ' "> '; // .href is the prop needed to access the link
-
-									 albumHTML += '<img src= "' + eachAlbum.images[0].url + ' " >  </a> </li>'; //.images.url is the prop in the spotify json object with the pic/jpg
+									 albumHTML += '<li class = “grid-3”>';  //add CSS class
+									 albumHTML += '<a href= "'+ eachAlbum.images[0].url + ' " class = "grid-3" data-lightbox="image" data-title = "' +  eachAlbum.name + '" > <img class="image" alt="album photo" src =" '+ eachAlbum.images[0].url+ ' "> </a> </li>'; //.images.url is the prop in the spotify json object with the pic/jpg
 							});//END $.each
 							//
 								 albumHTML += '</ul>';
-											console.log(albumHTML);
+											// console.log(albumHTML);
 								$("#album-gallery").html(albumHTML);
 
 								// re-enable the search-area while ajax getting info
