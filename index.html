@@ -14,17 +14,24 @@
 
   <body>
     <div id="page-wrapper">
-      <header role="banner">
-        <h1>SPOTIFY GALLERY </h1>
-        <!-- <p> </p> -->
-      </header>
+      <div id="header-wrapper">
+        <header role="banner" >
+          <div id="sticky-arrow">
+            <a href="#main-content" >
+              <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+            </a>
+            <h1>SPOTIFY GALLERY </h1>
+          </div>
+        </header>
+      </div>
+
 
       <main role="main" id= "main-content">
 
         <div id="search-box">
           <form>
-            <label for="search-area"> Search albums by artist</label><br>
-            <input placeholder="Type your search here" id="search-area" name="search-area"  type="text" tabindex="1" ><span id="search-icon"></span><br>
+            <label for="search-area"> Search by artist</label><br>
+            <input id="search-area" name="search-area"  type="text" tabindex="1" ><i class="fa fa-search" aria-hidden="true"></i>
             <input type="submit"  id="submit-button" class="selected" value="search">
         </form>
 
@@ -42,6 +49,7 @@
 
     <!--  END  id "page-wrapper" below -->
     </div>
+    <script src="https://use.fontawesome.com/1e4372e66f.js"></script>
     <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
