@@ -10,15 +10,15 @@ header {
   display: block;
 }
 
-a {
+/*a {
   margin: auto 0;
-}
+}*/
 
 
 a,
 h1 {
   display:inline-block;
-  margin: auto .25em;
+  /*margin: auto .25em;*/
 }
 
 h1 {
@@ -53,6 +53,7 @@ li:hover {
     position: relative;
     top: -90px;
 }
+
 
 
 #page-wrapper {
