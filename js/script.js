@@ -1,22 +1,21 @@
 
 $(document).ready(function() {
 
-/*********************VARIABLES***************************************/
+	//Remove the seach icon when mouse is over the search area
 
-// var $overlay =$('<div id="overlay"></div');
-// var $image=$("<img>");
-// var $caption=$("<div><p></p></div>");
+		$('#search-area').mouseenter( function () {
+			$('.fa-search').fadeOut(001);
+			$(this).css("margin-bottom","1.15em");
+		});
+		$('#search-area').mouseleave( function () {
+			$('.fa-search').fadeIn(200);
+			$(this).css("margin-bottom","0em");
 
 
-
+		});
 
 
 /*********************MAIN SEARCH BOX FUNCTION*************************/
-
-
-
-
-
 
 
 		$('form').submit(function (evt) {  // adds event handler/ click to submit button
@@ -24,18 +23,17 @@ $(document).ready(function() {
 			 //Stop the form from submitting //prevent default browser action...leaving page
 			 	 evt.preventDefault();
 
-			 		var $submitButton = $("submit-button");
+			 		var $submitButton = $("#submit-button");
 			 		var $searchValues = $("#search-area");
 			 		var eachSearchValue;
 					// when form button submitted this code will run
+
+
 
 					// disable the search-area while ajax getting info
 					$searchValues.prop("disabled",true);
 					//give the submit button a "searching label"
 					$submitButton.attr("disabled", true).val("searching...");
-					///Remove / add classes not working
-					$('button').removeClass('selected');  //  removethe class “selected” of any button
-					$(this).addClass('selected'); // add “selected” class to button actually clicked
 					//jQuery to get search area text and then remove white spaces at begin/end of string
 
 					eachSearchValue = $searchValues.val().trim();
@@ -48,12 +46,12 @@ $(document).ready(function() {
 							type :  "album"
 							};
 					function displayAlbums (data) {
-						console.log(data);
-						console.log(data.items);
+						// console.log(data);
+						// console.log(data.items);
 							var albumHTML = '<ul id="search-list">';  // start build ul list for the album_art images
 
 							$.each(data.albums.items, function ( i, eachAlbum) {
-								console.log(data.albums.items);
+								// console.log(data.albums.items);
 
 							// $.each accesses the spotify object /array and loops through each one…
 							// /// $.each (object/array, callBackFunction(); ///
@@ -79,9 +77,6 @@ $(document).ready(function() {
 					 $('#search-area').val("");
 
 		}); //end  form buttonclick  event function
-
-
-/*************************CLICK ON ALBUM ART TO SEE LIGHTBOX OF INFO********************************/
 
 
 }); ///END DOCUMENT READY FUNCTION
