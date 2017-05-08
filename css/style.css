@@ -10,15 +10,10 @@ header {
   display: block;
 }
 
-/*a {
-  margin: auto 0;
-}*/
 
-
-a,
+#top-arrow,
 h1 {
   display:inline-block;
-  /*margin: auto .25em;*/
 }
 
 h1 {
