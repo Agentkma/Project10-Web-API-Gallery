@@ -1,4 +1,8 @@
 
+/***************************
+*******GLOBAL STYLES********
+***************************/
+
 * {
   text-align: center;
   box-sizing: border-box;
@@ -19,6 +23,7 @@ h1 {
 h1 {
   font-size: 1em;
 }
+
 li {
   width: 90%;
   list-style: none;
@@ -38,18 +43,26 @@ li:hover {
   -o-transform:scale(1.1);
 }
 
+
+/***************************
+*******CLASSES********
+***************************/
+
 .image {
   width: 100%;
   height: auto;
 }
 
 .fa-search {
-    display: inline-block;
-    position: relative;
-    top: -90px;
+  display: inline-block;
+  position: relative;
+  top: -90px;
 }
 
 
+/***************************
+*******ID'S********
+***************************/
 
 #page-wrapper {
   display: flex;
@@ -57,7 +70,7 @@ li:hover {
   padding-top: 1em;
   background: linear-gradient(#000, transparent 40%),
               linear-gradient(0deg, #000, transparent 40%),
-              #000 url('../img/spotify-bgM.png') no-repeat center;
+              #000 url('../img/spotify-bgM.png') repeat center;
   background-size: cover;
   background-position: center;
   height: 50em;
@@ -83,6 +96,7 @@ li:hover {
   margin: 2em auto;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 #search-box {
@@ -115,7 +129,6 @@ li:hover {
   flex-direction: column;
   padding: 0;
   margin: 0 auto;
-  list-style-position: inside;
 }
 
 #submit-button {
@@ -126,20 +139,31 @@ li:hover {
 }
 
 
+
+/***************************
+*******MEDIA QUERIES********
+***************************/
+
+
 @media (min-width : 768px) {
 
-  h1 {
-    font-size: 2em;
-  }
+    h1 {
+      font-size: 2em;
+      margin: .5em auto;
+    }
 
-  .fa-chevron-circle-up {
-    left: 1em;
-  }
+    .fa-chevron-circle-up {
+      left: 1em;
+    }
 
-  /*#sticky-arrow {
+    #sticky-arrow{
+      background:transparent;
+      transition: all 1s ease-in-out;
+    }
 
-    font-size: 3em;
-  }*/
+    #sticky-arrow:hover{
+      background:black;
+    }
 
     #search-box {
       width: 50%;
@@ -152,17 +176,19 @@ li:hover {
       height: auto;
     }
 
+    #main-content{
+      margin: 4em auto;
+    }
+
 
     .grid-3 {
-    flex-basis: 200px;
-    flex-grow:1;
-
-    }
+      flex-basis: 200px;
+      flex-grow:1;
+      }
 
     li {
       width: 25%;
       margin: 1em;
-
       box-shadow: -20px -20px 10px black;
       transition: all .2s ease-in-out;
       -moz-transition:all .2s ease-in-out;
@@ -178,9 +204,3 @@ li:hover {
     }
 
 }
-
-
-
-@media only screen and (min-width:1100px) {
-
-    }

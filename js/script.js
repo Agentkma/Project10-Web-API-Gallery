@@ -4,14 +4,13 @@ $(document).ready(function() {
 	//Remove the seach icon when mouse is over the search area
 
 		$('#search-area').mouseenter( function () {
-			$('.fa-search').fadeOut(001);
-			$(this).css("margin-bottom","1.15em");
+				$('.fa-search').fadeOut(10);
+				$(this).css("margin-bottom","1.15em");
 		});
+
 		$('#search-area').mouseleave( function () {
-			$('.fa-search').fadeIn(200);
-			$(this).css("margin-bottom","0em");
-
-
+				$('.fa-search').fadeIn(200);
+				$(this).css("margin-bottom","0em");
 		});
 
 
@@ -29,7 +28,6 @@ $(document).ready(function() {
 					// when form button submitted this code will run
 
 
-
 					// disable the search-area while ajax getting info
 					$searchValues.prop("disabled",true);
 					//give the submit button a "searching label"
@@ -45,6 +43,7 @@ $(document).ready(function() {
 							q : eachSearchValue,
 							type :  "album"
 							};
+
 					function displayAlbums (data) {
 						// console.log(data);
 						// console.log(data.items);
@@ -60,7 +59,7 @@ $(document).ready(function() {
 									 albumHTML += '<a href= "'+ eachAlbum.images[0].url + ' " class = "grid-3" data-lightbox="image" data-title = "' +  eachAlbum.name + '" > <img class="image" alt="album photo" src =" '+ eachAlbum.images[0].url+ ' "> </a> </li>'; //.images.url is the prop in the spotify json object with the pic/jpg
 							});//END $.each
 							//
-								 albumHTML += '</ul>';
+								albumHTML += '</ul>';
 											// console.log(albumHTML);
 								$("#album-gallery").html(albumHTML);
 

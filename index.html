@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lightbox2-master/dist/css/lightbox.css">
-
-
   </head>
 
   <body>
@@ -17,30 +15,29 @@
       <div id="header-wrapper">
         <header role="banner" >
           <div id="sticky-arrow">
-            <a href="#main-content"  id="top-arrow">
-              <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
-            </a>
-            <h1>SPOTIFY GALLERY </h1>
+
+            <h1>SPOTIFY GALLERY
+              <a href="#search-box"  id="top-arrow">
+                <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+              </a>
+           </h1>
           </div>
         </header>
       </div>
 
 
-      <main role="main" id= "main-content">
-
+      <main role="main" id= "main-content" >
         <div id="search-box">
           <form>
             <label for="search-area"> Search by artist</label><br>
             <input id="search-area" name="search-area"  type="text" tabindex="1" ><i class="fa fa-search" aria-hidden="true"></i>
             <input type="submit"  id="submit-button" class="selected" value="search">
-        </form>
-
-
+          </form>
         </div>
+
         <div id="album-gallery">
        <!-- END id "album-gallery" below -->
         </div>
-
       </main>
 
       <footer>
